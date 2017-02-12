@@ -12,7 +12,7 @@
         <java-version>1.8</java-version>
         <maven-compiler-plugin-version>2.3.2</maven-compiler-plugin-version>
         <maven-war-plugin-version>2.4</maven-war-plugin-version>
-        <junit-version>4.11</junit-version>
+        <junit-version>5.0.0-M3</junit-version>
         <persistence-api-version>1.0</persistence-api-version>
         <spring-framework-version>4.1.6.RELEASE</spring-framework-version>
     </properties>
@@ -31,10 +31,10 @@
 
     <dependencies>
 
-        <!-- JUnit testing framework -->
+        <!-- JUnit 5 testing framework -->
         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
             <version>${junit-version}</version>
             <scope>test</scope>
         </dependency>
