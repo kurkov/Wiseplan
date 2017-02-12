@@ -3,6 +3,7 @@ package com.github.kurkov.wiseplan.entity;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import java.time.Duration;
 import java.time.LocalTime;
 
 /**
@@ -22,6 +23,9 @@ public class Task extends AbstractEntity {
     @Column(name = "TIME_TO")
     private LocalTime timeTo;
 
+    @Column(name = "DURATION")
+    private Long duration;
+
     @Column(name = "CATEGORY")
     private TaskCategory category;
 
@@ -33,6 +37,7 @@ public class Task extends AbstractEntity {
         this.timeFrom = timeFrom;
         this.timeTo = timeTo;
         this.category = category;
+        this.duration = Duration.between(timeFrom, timeTo).toMinutes();
     }
 
     public String getTitle() {
@@ -57,6 +62,14 @@ public class Task extends AbstractEntity {
 
     public void setTimeTo(LocalTime timeTo) {
         this.timeTo = timeTo;
+    }
+
+    public Long getDuration() {
+        return duration;
+    }
+
+    public void setDuration(Long duration) {
+        this.duration = duration;
     }
 
     public TaskCategory getCategory() {

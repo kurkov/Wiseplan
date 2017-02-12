@@ -1,6 +1,7 @@
 package com.github.kurkov.wiseplan.entity;
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 /**
@@ -10,6 +11,7 @@ import org.junit.jupiter.api.Test;
 class TaskCategoryTest {
 
     @Test
+    @DisplayName("Check toString method")
     void checkToStringMethod() {
         String expected = "1";
         TaskCategory category = TaskCategory.FIRST;
