@@ -8,6 +8,8 @@ import com.github.kurkov.wiseplan.entity.Task;
  */
 public interface TaskDAO {
 
+    Task getTaskById(Long taskId);
+
     void addTask(Task task);
 
     void removeTask(Task task);

@@ -16,6 +16,11 @@ public class TaskDAOImpl implements TaskDAO {
     private SessionFactory sessionFactory;
 
     @Override
+    public Task getTaskById(Long taskId) {
+        return sessionFactory.getCurrentSession().get(Task.class, taskId);
+    }
+
+    @Override
     public void addTask(Task task) {
         sessionFactory.getCurrentSession().save(task);
     }

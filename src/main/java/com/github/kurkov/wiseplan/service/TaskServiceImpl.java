@@ -18,6 +18,12 @@ public class TaskServiceImpl implements TaskService {
 
     @Transactional
     @Override
+    public Task getTaskById(Long taskId) {
+        return taskDAO.getTaskById(taskId);
+    }
+
+    @Transactional
+    @Override
     public void addTask(Task task) {
         taskDAO.addTask(task);
     }
