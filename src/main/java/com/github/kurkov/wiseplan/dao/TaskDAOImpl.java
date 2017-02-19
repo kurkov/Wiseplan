@@ -35,6 +35,9 @@ public class TaskDAOImpl implements TaskDAO {
 
     @Override
     public void removeTask(Task task) {
-        sessionFactory.getCurrentSession().delete(task);
+        Task checkTask = getTaskById(task.getId());
+        if (checkTask != null) {
+            sessionFactory.getCurrentSession().delete(task);
+        }
     }
 }
