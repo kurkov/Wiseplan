@@ -16,5 +16,7 @@ public interface TaskDAO {
 
     void addTask(Task task);
 
-    void removeTask(Task task);
+    void updateTask(Task task);
+
+    void removeTask(Long taskId);
 }
