@@ -2,7 +2,6 @@ package com.github.kurkov.wiseplan.service;
 
 import com.github.kurkov.wiseplan.dao.TaskDAO;
 import com.github.kurkov.wiseplan.entity.Task;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -15,31 +14,40 @@ import java.util.List;
 @Service
 public class TaskServiceImpl implements TaskService {
 
-    @Autowired
     private TaskDAO taskDAO;
 
-    @Transactional
+    public void setTaskDAO(TaskDAO taskDAO) {
+        this.taskDAO = taskDAO;
+    }
+
     @Override
+    @Transactional
     public Task getTaskById(Long taskId) {
         return taskDAO.getTaskById(taskId);
     }
 
+    @Override
     @SuppressWarnings("unchecked")
     @Transactional
-    @Override
     public List<Task> taskList() {
         return taskDAO.taskList();
     }
 
-    @Transactional
     @Override
+    @Transactional
     public void addTask(Task task) {
         taskDAO.addTask(task);
     }
 
-    @Transactional
     @Override
-    public void removeTask(Task task) {
-        taskDAO.removeTask(task);
+    @Transactional
+    public void updateTask(Task task) {
+        taskDAO.updateTask(task);
+    }
+
+    @Override
+    @Transactional
+    public void removeTask(Long taskId) {
+        taskDAO.removeTask(taskId);
     }
 }
