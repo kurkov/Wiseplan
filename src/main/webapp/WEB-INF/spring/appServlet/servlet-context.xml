@@ -15,6 +15,8 @@
     <!-- Map all statics (images, css-files, javascript) at webapp/resources to URL /resources/** -->
     <resources mapping="/resources/**" location="/resources/"/>
 
+    <resources mapping="/webjars/**" location="/webjars/"/>
+
     <!-- Resolve views at folder /WEB-INF/views -->
     <beans:bean
             class="org.springframework.web.servlet.view.InternalResourceViewResolver">
